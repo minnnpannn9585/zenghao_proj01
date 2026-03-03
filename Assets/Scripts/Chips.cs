@@ -13,12 +13,14 @@ public class Chips : MonoBehaviour
     {
         light.SetActive(true);
         canInteract = true;
+        print(1);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         light.SetActive(false);
         canInteract = false;
+        print(2);
     }
 
     private void OnMouseDown()
@@ -26,6 +28,7 @@ public class Chips : MonoBehaviour
         if (canInteract)
         {
             chipsOpen.SetActive(true);
+            DialogueManager.instance.StartDialogue("Chips. Two bags, both opened. Some things never change…");
         }
         
     }
