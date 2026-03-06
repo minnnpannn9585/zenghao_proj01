@@ -8,6 +8,7 @@ public class Chips : MonoBehaviour
     public GameObject light;
     public GameObject chipsOpen;
     bool canInteract = false;
+    public string dialogue;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,7 +29,7 @@ public class Chips : MonoBehaviour
         if (canInteract)
         {
             chipsOpen.SetActive(true);
-            DialogueManager.instance.StartDialogue("Chips. Two bags, both opened. Some things never change…");
+            DialogueManager.instance.StartDialogue(dialogue);
         }
         
     }
